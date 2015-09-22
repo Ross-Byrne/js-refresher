@@ -16,7 +16,62 @@
     
     <script type="text/javascript">
       
-    </script>
+        // Objects
+        
+        var ball = { 
+            
+            // Constructor
+            Ball : function(x, y, r){
+                
+                this.x = x;
+                this.y = y;
+                this.r = r;
+            },
+            
+            // xPosition
+            x: 10,
+            
+            // yPosition
+            y: 20, 
+            
+            // radius
+            r: 2,
+            
+            // Function to move ball
+            move : function(addX, addY){
+            
+                // add 10 to xpos
+                ball.x += addX;
+                
+                // add 10 to ypos
+                ball.y += addY;
+            }, // move()
+            
+            // function to resize the ball
+            resize : function(newR){
+                
+                // change value of r
+                ball.r = newR;
+                
+            } // resize()
+            
+        }; // ball object
+        
+        // Variables
+        var xpos = 10;
+        var ypos = 20;
+        
+        
+        // Functions
+        function move(addxpos, addypos){
+            
+            xpos += addxpos;
+            
+            ypos += addypos;
+            
+        } // move()
+
+      </script>
 
   </body>
 
