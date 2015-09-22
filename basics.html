@@ -20,40 +20,53 @@
         
         var ball = { 
             
-            // Constructor
-            Ball : function(x, y, r){
-                
-                this.x = x;
-                this.y = y;
-                this.r = r;
-            },
-            
             // xPosition
-            x: 10,
+            x: 0
             
             // yPosition
-            y: 20, 
+            ,y: 0
             
             // radius
-            r: 2,
+            ,r: 1
             
             // Function to move ball
-            move : function(addX, addY){
+            // Constructor
+            ,move: function(dX, dY){
             
                 // add 10 to xpos
-                ball.x += addX;
+                this.x += dX;
                 
                 // add 10 to ypos
-                ball.y += addY;
-            }, // move()
+                this.y += dY;
+            } // move()
             
             // function to resize the ball
-            resize : function(newR){
+            ,resize: function(newR){
                 
                 // change value of r
-                ball.r = newR;
+                this.r = newR;
                 
             } // resize()
+            
+            ,contains: function(x, y){
+                
+                // to find if Xp and Yp is on circle Xc and Yc
+                // d = root (Xp - Xc)squared + (Yp - Yc)squared
+                // if d squared < r squared, on the circle
+                // if d squared > r squared, not on circle
+                
+                if(((x - this.x)^2 + (y - this.y)^2) < (this.r)^2){
+                    
+                 return true;   
+                    
+                } else {
+                    
+                    
+                 return false;   
+                }
+               
+                return 0;
+            }
             
         }; // ball object
         
@@ -63,6 +76,15 @@
         
         
         // Functions
+        
+        function Ball(x, y, r){
+            
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            
+        }
+        
         function move(addxpos, addypos){
             
             xpos += addxpos;
@@ -70,6 +92,9 @@
             ypos += addypos;
             
         } // move()
+        
+        var ball2 = new Ball(10, 30, 5)
+       
 
       </script>
 
